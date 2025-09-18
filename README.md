@@ -1,0 +1,16 @@
+# Bristol LaTeX Template
+<!--[![Release](https://img.shields.io/github/v/release/samcole8/bristol-latex-template)](https://github.com/samcole8/bristol-latex-template/releases/latest)-->
+[![Status](https://img.shields.io/badge/status-in--development-orange)](https://github.com/samcole8/bristol-latex-template)
+![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue)
+![Repo Size](https://img.shields.io/github/repo-size/samcole8/bristol-latex-template)
+![Open Issues](https://img.shields.io/github/issues/samcole8/bristol-latex-template)
+![Last Commit](https://img.shields.io/github/last-commit/samcole8/bristol-latex-template)
+
+A LaTeX template for University of Bristol dissertations.
+
+## Software License
+This template is licensed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) license. This license establishes different rules for **software** and **content**, which are explained below:
+
+- You *cannot* use the template code itself (**software**) for commercial purposes.
+- You *can* use the generated PDF/DOCX document (**content**) for any purpose, including commercial applications, without attribution.
+- If you redistribute the template code (**software**), you must attribute the [original source](https://github.com/samcole8/bristol-latex-template) and retain the existing license.
