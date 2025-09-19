@@ -1,0 +1,119 @@
+%TC:group minted [] xxx
+\documentclass[12pt]{report}
+
+% language & text
+\usepackage[british]{babel}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+
+% spacing & margins
+\setlength{\parskip}{1em}
+\usepackage{titlesec}
+\usepackage{fullpage}
+\usepackage{geometry}
+\geometry{a4paper, left=0.9in, right=0.9in, top=0.9in, bottom=0.9in}
+
+% images
+\usepackage[]{graphicx}
+\usepackage[]{capt-of}
+\graphicspath{{./images/}}
+
+% bibliography
+\usepackage[backend=biber, style=authoryear-ibid, giveninits=true, maxnames=3, minnames=1, uniquename=false]{biblatex}
+\addbibresource{refs.bib} % change this to your `.bib` file
+
+% code - disabled by default
+%\usepackage{minted}
+%\NewDocumentCommand{\codeword}{v}{%
+%\texttt{{#1}}%
+%}
+
+\usepackage{hyperref} % dynamic links
+\usepackage{float} % floating tables
+
+% set pdf metadata
+\hypersetup{
+  pdftitle={Title},
+  pdfauthor={Author},
+  pdfsubject={Dissertation Subject},
+  pdfkeywords={foo, bar, etc}
+}
+
+% glossary
+\usepackage[acronym]{glossaries}
+\usepackage[automake]{glossaries-extra}
+\makeglossaries%
+% add glossary entries here
+
+\newglossaryentry{example}{
+  name={Example},
+  description={Definition of Example}
+}
+
+\newacronym{ab1}{AB1}{Abbreviation 1}
+
+% sectioning
+\makeatletter
+\newcommand\frontmatter{\cleardoublepage\pagenumbering{roman}}
+\newcommand\mainmatter{\cleardoublepage\pagenumbering{arabic}}
+\newcommand\backmatter{\if@openright\cleardoublepage\pagenumbering{arabic}\else\clearpage\fi}
+\makeatother
+
+\begin{document}
+
+\raggedright%
+\frontmatter
+
+% title page
+\begin{titlepage}
+  \centering
+  \vspace*{2in}
+  {\LARGE \textbf{Title}} \\
+  \vspace{0.3in}
+  {\large by} \\
+  \vspace{0.3in}
+  {\large Author} \\
+  \vspace{0.3in}
+  \vfill
+  {\large Submitted to the School of [Department Name]} \\
+  \vspace{0.2in}
+  {\large [University Name]} \\
+  \vspace{0.2in}
+  {\large \today} \\
+\end{titlepage}
+
+% other frontmatter - remove as required
+\tableofcontents
+\listoffigures
+\listoftables
+% enable if using minted code
+% \listoflistings
+\printglossary[title={List of Definitions}, type=main]
+\printglossary[title={List of Abbreviations}, type=acronym]
+
+
+% redefine chapter headings
+\titleformat{\chapter}[display]{\normalfont\bfseries\Huge}{}{0pt}{\thechapter\quad}
+\mainmatter%
+
+\chapter{Introduction}
+
+\chapter{Literature Survey}
+
+\chapter{Methodology}
+
+\chapter{Conclusions}
+
+\backmatter%
+
+% uncomment to include uncited sources
+% \nocite{*}
+\printbibliography[heading=bibnumbered,title={References}]
+
+\appendix
+\renewcommand{\thepage}{\Alph{chapter}\arabic{page}}
+
+\chapter{Appendix}\setcounter{page}{1}
+
+\end{document}
